@@ -1,0 +1,161 @@
+/* Release: dev */
+
+#g-setup * {
+	margin: 0!important;
+	padding: 0!important;
+	font-family: Verdana, Geneva, sans-serif!important;
+	font-size: 12px!important;
+	font-weight: normal!important;
+	color: #58517c!important;
+	z-index: 2000!important;
+	background: none!important;
+	list-style-type: none!important;
+	letter-spacing: normal!important;
+	line-height: normal!important;
+	border: 0!important;
+	text-indent: 0px!important;
+	text-decoration: none!important;
+	text-transform: none!important;
+}
+
+#g-setup {
+	width: 350px;
+	background-color: #EEE;
+	border: 5px solid #CCC;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -175px;
+	z-index: 2000;
+}
+
+#g-setup .grouphead {
+	text-align: center!important;
+	font-weight: bold!important;
+	font-size: 14px!important;
+	border-bottom: 1px dotted #CCC!important;
+	margin-bottom: 5px!important;
+}
+
+#g-setup .inputdesc,
+#g-setup input {
+	font-size: 10px!important;
+	float: left!important;
+	width: 40%!important;
+	display: block!important;
+}
+
+#g-setup input {
+	padding: 2px!important;
+	background-color: #FFF!important;
+	border: 1px inset!important;
+}
+
+#g-setup .inputwrap {
+	margin-bottom: 3px!important;
+}
+
+#g-setup .inputdesc {
+	text-align: right!important;
+	line-height: 1.7!important;
+	padding-right: 5px!important;
+}
+
+#g-setup-head {
+	width:100%!important;
+	list-style-type: none!important;
+}
+
+#g-setup-head li {
+	padding: 4px!important;
+}
+
+#g-setup-head .title {
+	float: left!important;
+	width: 210px!important;
+	text-align: right!important;
+	font-weight: bold!important;
+}
+
+#g-setup-head .switch {
+	float: right!important;
+	width: 50px!important;
+	text-align: right!important;
+}
+
+#g-setup-content {
+	border-top: 5px solid #CCC!important;
+	display: none;
+}
+
+#g-setup .g-setup-left-column,
+#g-setup .g-setup-right-column {
+	width: 165px!important;
+	float: left!important;
+	padding: 4px!important;
+	border-bottom: 5px solid #CCC!important;
+}
+
+#g-setup .g-setup-left-column {
+	border-right: 4px solid #CCC!important;
+}
+
+#g-setup .input-check .inputdesc {
+	padding-left: 25px!important;
+	width: 220px!important;
+	text-align: right!important;
+}
+
+#g-setup .input-check input {
+	width: 15px!important;
+	height: 15px!important;
+	background: none!important;
+}
+
+.g-label {
+	position: absolute;
+	z-index: 1000;
+}
+
+.g-label span {
+	padding: 4px;
+}
+
+.g-label .id {
+	background-color: #069;
+	color: #EEE;
+}
+
+.g-label .class {
+	background-color: #0FF;
+	color: #000;
+}
+
+#g-grid {
+	left: 0;
+	position: absolute;
+	z-index: 500;
+	top: 0;
+}
+
+#g-grid .g-vertical,
+#g-grid .g-horizontal {
+	position: absolute;
+	z-index: 1000;
+}
+
+/* IE7 Only, 1 pixel faulty in the grid */
+*:first-child+html #g-grid .g-horizontal,
+*:first-child+html #g-grid .g-vertical {
+	margin-left: -1px;
+}
+
+#g-grid .g-horizontal {
+	min-height: 1px;
+	height: 1px;
+	font-size: 0%;
+	line-height: 0;
+}
+
+/* Webtoolkits Clearfix */
+.clearfix:after {content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;} .clearfix {display:inline-block;} html[xmlns] .clearfix {display:block;} * html .clearfix {height:1%;}

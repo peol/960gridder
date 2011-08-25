@@ -1,0 +1,100 @@
+/* Release: 1.0 2009-03-07 */
+
+#g-setup * {
+	font-family: Verdana, Geneva, sans-serif!important;
+	font-size: 11px!important;
+	color: #000!important;
+	letter-spacing: 0.2px!important;
+	line-height: 1.0!important;
+	padding: 0!important;
+	height: auto!important;
+	text-transform: none!important;
+}
+
+#g-setup {
+	position: absolute;
+	left: 50%;
+	width: 250px;
+	margin-left: -125px;
+	border: 5px solid #C0C0C0;
+	background-color: #EEE;
+	z-index: 1200;
+}
+
+#g-setup label {
+	float: left!important;
+	width: 120px!important;
+	text-align: right!important;
+	padding-right: 5px!important;
+	line-height: 1.4!important;
+}
+
+#g-setup input {
+	float: left!important;
+	width: 100px!important;
+}
+
+#g-setup h6 {
+	margin: 10px 0 5px 0!important;
+	text-align: center!important;
+}
+
+#g-submit {
+	display: block;
+	margin: 6px auto 0 auto!important;
+	width: 69px;
+	color: #069!important;
+	line-height: 1.3!important;
+	text-decoration: none!important;
+	border-bottom: 1px dotted #666!important;
+	font-weight: normal!important;
+}
+
+#g-name {
+	float: left;
+	margin: 2px 0 0 4px!important;
+	font-weight: bold;
+	line-height: 1.3!important;
+}
+
+#g-show-hide {
+	float: right;
+	margin: 2px 4px 0 0!important;
+	font-size: 10px!important;
+	cursor: pointer;
+	border-bottom: 1px dotted #069!important;
+	line-height: 1.3!important;
+}
+
+#g-grid {
+	left: 0;
+	position: absolute;
+	top: 0;
+}
+
+#g-grid .g-vertical,
+#g-grid .g-horizontal {
+position: absolute;
+z-index: 1000;
+}
+
+* html .clearfix {
+	height:1%;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+.clearfix:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+}
+
+html[xmlns] .clearfix {
+	display: block;
+}

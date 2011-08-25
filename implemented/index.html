@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>960 Gridder Implemented Demo</title>
+
+<style type="text/css">
+	* { line-height: 16px; margin: 0; padding: 0; }
+
+	code {
+		background-color: #EEE;
+		color: #777;
+		display: block;
+		margin: 0 auto;
+		padding: 16px;
+		width: 748px;
+	}
+	
+	html { color: #777; }
+	 
+	p { margin: 0 0 16px 0; }
+
+	a { color: #0000FF; }
+
+	#container { margin: 33px auto; width: 960px; }
+
+	#live {
+		background-color: #C0C0C0;
+		color: #000;
+		margin: 0 auto;
+		padding: 16px;
+		width: 908px;
+	}
+</style>
+
+<script type="text/javascript">
+	window.gOverride = {
+		gColor: '#FF0000',
+		pColor: '#0000FF',
+		gOpacity: 0.30,
+		pOpacity: 0.40,
+		pHeight: 16,
+		pOffset: 2
+	}
+	
+	createGridder = function() {
+		document.body.appendChild(
+			document.createElement('script'))
+				.src='/releases/latest/960.gridder.js';
+	}
+</script>
+
+</head>
+
+<body onload="createGridder()">
+
+<div id="container">
+
+<p>960 pixel width of layout</p>
+
+<div id="live">
+<p>940 pixel "live" area. I've set that paragraphs have a line height of 16 pixels, and a margin of 16 pixels under it. You can see that in this window the paragraphs nicely align, making them a good tool to measure different boxes and their paragraphs and other text so that they are matching up.</p>
+<p>Turn off the grid by pressing <strong>CTRL + ALT + C</strong></p>
+<p style="text-align: center;"><a href="javascript:window.grid.setVariable('invert', !window.grid.settings.invert);">Click here to toggle invertion of the grid</a>, or press <strong>CTRL + ALT + A</strong></p>
+<pre>
+<code>
+&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;title&gt;960 Gridder - Lay out websites with ease.&lt;/title&gt;
+&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+&lt;meta name=&quot;keywords&quot; content=&quot;960 gridder, pixels, jquery, layout, design, javascript, web design, web development&quot; /&gt; 
+&lt;meta name=&quot;robots&quot; content=&quot;index,follow&quot; /&gt; 
+&lt;meta name=&quot;description&quot; content=&quot;960 Gridder is an excellent tool for any web developer/designer that wants to easily align, match and lay out websites.&quot; /&gt; 
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;code/style.css&quot; /&gt;
+&lt;!--[if lte IE 7]&gt; &lt;style type=&quot;text/css&quot;&gt; #head { padding-bottom: 18px; } &lt;/style&gt; &lt;![endif]--&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+var gOverride = {
+	pHeight: 18,
+	gColor: '#FF0000',
+	invert: true,
+	pOffset: -2
+};
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div id=&quot;head&quot;&gt;
+
+    &lt;h1 class=&quot;sprite-logo&quot;&gt;960 Gridder&lt;/h1&gt;
+
+&lt;div id=&quot;magic&quot; class=&quot;sprite-magic&quot;&gt;
+	Drag it to your bookmark bar:&lt;br /&gt;
+	&lt;a href=&quot;javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://gridder.andreehansson.se/releases/latest/960.gridder.js';})();&quot;&gt;960 Gridder&lt;/a&gt;&lt;br /&gt;
+	&lt;span&gt;or click &lt;a href=&quot;/implemented&quot; style=&quot;font-size: 12px; font-weight: bold; border: 0;&quot;&gt;HERE&lt;/a&gt; to see it in action&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id=&quot;container&quot;&gt; 
+	&lt;div id=&quot;info-box&quot; class=&quot;clearfix&quot;&gt;
+            &lt;strong&gt;2011-08-25&lt;/strong&gt; 960 Gridder has been moved to github: &lt;a href=&quot;http://github.com/peol/960gridder&quot;&gt;github.com/peol/960gridder&lt;/a&gt;&lt;br/&gt;
+                Check me out on &lt;a href=&quot;http://twitter.com/peolanha&quot;&gt;Twitter&lt;/a&gt; for web-tech related tweets and other fun stuff.
+	&lt;/div&gt;
+
+&lt;div class=&quot;left&quot;&gt;
+
+&lt;!-- WHAT --&gt;
+
+&lt;h2 id=&quot;what&quot; class=&quot;sprite-h2&quot;&gt;What is this?&lt;/h2&gt;
+
+&lt;p&gt;960 Gridder is an excellent tool for any web developer/ designer that wants to easily align, match and/or lay out websites.&lt;/p&gt;
+
+&lt;p&gt;The idea came when designing a website for a student organization where I worked with several designers that handed their lay outs and designs in Photoshop format with a similar grid built-in to me. After a while I noticed how hard it became to make sure everything looked exactly how they intended it, especially in the different browsers.&lt;/p&gt;
+
+&lt;p&gt;960 Gridder is cross-browser compliant and works well in Internet Explorer 6/7/8, Firefox 2/3 and Chrome. Safari 4 Beta and Opera 9 is also working as expected and it should work in Safari 2.x-3.x also.&lt;/p&gt;
+
+&lt;p&gt;According to &lt;a href=&quot;http://browsershots.org/&quot; title=&quot;Website: browsershorts.org&quot;&gt;browsershots&lt;/a&gt;, all A-grade browsers now display the grid perfectly (version 1.3.1).&lt;/p&gt;
+
+&lt;!-- HOW --&gt;
+
+&lt;h2 id=&quot;how&quot; class=&quot;sprite-h2&quot;&gt;How does it work?&lt;/h2&gt;
+
+&lt;p&gt;960 Gridder is built upon the very famous JavaScript framework &lt;a title=&quot;Website: jQuery&quot; href=&quot;http://jquery.com/&quot;&gt;jQuery&lt;/a&gt;. 960 Gridder will automatically identify if jQuery is present at the website and if it is not, it will include it. However, 960 Gridder isn't affiliated with the jQuery authors at all.&lt;/p&gt;
+
+&lt;p&gt;It injects your website of choice and you can then work with this tool to help you out with whichever layout/design task you find it useful for.&lt;/p&gt;
+
+&lt;p&gt;By default, it is set to work with 12 columns, &lt;em&gt;60 pixel wide columns&lt;/em&gt; with a 10 pixel spacer left and right of the column, making it a 20 pixel wide gutter (which actually is the ones this gridder renders).&lt;/p&gt;
+
+&lt;p&gt;Since version 1.3, you can now use shortcut commands to manipulate the grid. Use &lt;strong&gt;CTRL + ALT&lt;/strong&gt; and &lt;em&gt;Z&lt;/em&gt; for toggling gutters, &lt;em&gt;X&lt;/em&gt; for toggling paragraphs and &lt;em&gt;C&lt;/em&gt; for toggling both. Use &lt;em&gt;A&lt;/em&gt; to toggle invertion of the grid.&lt;/p&gt;
+
+&lt;p&gt;You can see and read about the &quot;960 standard&quot; at &lt;a title=&quot;Website: 960.gs&quot; href=&quot;http://960.gs&quot;&gt;http://960.gs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!-- WHERE --&gt;
+
+&lt;h2 id=&quot;where&quot; class=&quot;sprite-h2&quot;&gt;Where do I use it?&lt;/h2&gt;
+&lt;p&gt;960 Gridder is mainly developed with focus on initial lay out or fine tuning of a website. Therefore, to be really effective it should be integrated into your lay out. If you however are curious about how different websites did their layout, you can use the bookmarklet.&lt;/p&gt;
+&lt;p&gt;You can try the bookmarklet for example at &lt;a title=&quot;Website: Facebook&quot; href=&quot;http://facebook.com/&quot;&gt;Facebook&lt;/a&gt;, &lt;a title=&quot;Website: Flickr&quot; href=&quot;http://flickr.com/&quot;&gt;flickr&lt;/a&gt; or why don't you just check out one of my favorite websites, &lt;a title=&quot;Website: elementiks&quot; href=&quot;http://elementiks.com/web_resources.php&quot;&gt;elementiks&lt;/a&gt; awesome list of web tools and resources? (Almost) all good things are 960 pixels in width! :-) For the swedish visitors, why not try it out on the &lt;a title=&quot;Website: Feber.se&quot; href=&quot;http://feber.se/&quot;&gt;feber.se&lt;/a&gt; sites? For a quick example, just click on this link: &lt;a title=&quot;Activate jQuery 960 Gridder&quot; href=&quot;javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://gridder.andreehansson.se/releases/latest/960.gridder.js';})();&quot;&gt;960 Gridder&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;To &quot;remove&quot; the grid, once activated, use CTRL + ALT + C or just refresh the page.&lt;/em&gt;&lt;/p&gt;
+
+&lt;!-- DEVELOPMENT --&gt;
+
+&lt;h2 id=&quot;development&quot; class=&quot;sprite-h2&quot;&gt;Development&lt;/h2&gt;
+
+&lt;p&gt;The development version is heavily worked on from time to time, which makes it pretty unstable. If you are thinking about implementing 960 Gridder, you are better of with the stable releases. This is however the version you would want to try if you want to see new functionality that is being implemented.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://gridder.andreehansson.se/releases/dev/960.gridder.src.js?'+(new Date()).getTime();})();&quot;&gt;960 Gridder (dev)&lt;/a&gt; version is also available as a bookmarklet, just drag the link to your bookmark field in your browser.&lt;/p&gt;
+
+&lt;p&gt;Source code, development version and older versions can be found &lt;a href=&quot;releases/?C=M;O=D&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!-- PROBLEMS --&gt;
+
+&lt;h2 id=&quot;problems&quot; class=&quot;sprite-h2&quot;&gt;Known Problems&lt;/h2&gt;
+
+&lt;p&gt;If you find anything that annoy you or something you want or need, just drop me a line on the e-mail address in the footer (click on my name) or drop me a line in the &lt;a href=&quot;#comments&quot;&gt;comments area&lt;/a&gt; below.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;There's an issue on some websites with the column dropbox not working. It'll be fixed for next release. Thanks to Guiseppe for pointing that out.&lt;/li&gt;
+&lt;li&gt;An issue with the paragraph (horizontal lines) not spacing right was pointed out by Phil from London. For now, you can replace the line at approx. 405 with this, and it should work: &lt;span style=&quot;background-color: #DDD;font-family: Courier new, monospace;&quot;&gt;top: ((me.settings.pHeight * i) + me.settings.pOffset)&lt;/span&gt; (thanks again Phil for reporting in!)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;right&quot;&gt;
+
+&lt;!-- LATEST --&gt;
+
+&lt;h2 id=&quot;news&quot; class=&quot;sprite-h2&quot;&gt;Latest Release&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Version 1.3.1 released April 26th, 2009.&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&quot;releases/1.3.1/960.gridder.js&quot;&gt;960.gridder.js&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;releases/1.3.1/logo-sprite.png&quot;&gt;logo-sprite.png&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Changelog (parsed from source code)&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;New GUI! The new GUI should be less obtrusive and has been repositioned. It is also featuring a slight delay on inputs so that you'll have a chance to change the settings before it is re-rendering the grid&lt;/li&gt;&lt;li&gt;Due to a lot of inquries regarding affiliation with jQuery the filenames has been changed, I'm very sorry for the inconvenience!&lt;/li&gt;&lt;li&gt;CSS issues with the GUI should also be fixed in more websites, please report in any issue you stumble upon&lt;/li&gt;&lt;li&gt;A small bug in IE that made the paragraph lines not position correctly has been fixed&lt;/li&gt;&lt;li&gt;A dropdown box has replaced the columns input box, 960 Gridder calculates the proper number of columns that can be used with the specified grid width&lt;/li&gt;&lt;li&gt;The 960 Gridder is now displaying perfectly (into the very pixels) in all A-grade browsers (according to browsershots.org)&lt;/li&gt;&lt;li&gt;An option to invert the gutters has been added, set this to 'true' if you want to use it, OR use the shortcut CTRL+ALT+A&lt;/li&gt;&lt;li&gt;Some other minor changes... &lt;/li&gt;&lt;/ul&gt;
+
+&lt;!-- BOOKMARKLET --&gt;
+
+&lt;h2 id=&quot;bookmarklet&quot; class=&quot;sprite-h2&quot;&gt;Bookmarklet&lt;/h2&gt;
+
+&lt;p&gt;To easily use 960 Gridder on various websites, you can use the bookmarklet below. Click and drag this link: &lt;a href=&quot;javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://gridder.andreehansson.se/releases/latest/960.gridder.js';})();&quot;&gt;960 Gridder&lt;/a&gt; to your bookmark field in your browser.&lt;/p&gt;
+
+&lt;!-- OVERRIDE --&gt;
+
+&lt;h2 id=&quot;overriding&quot; class=&quot;sprite-h2&quot;&gt;Overriding&lt;/h2&gt;
+
+&lt;p&gt;Below is an example on how to override the default values. You insert this snippet into your HEAD tag and you are good to go.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note!&lt;/strong&gt; You can leave out any variables you wish to have default values.&lt;/p&gt;
+
+&lt;code&gt;
+&lt;span class=&quot;top sprite-code-top&quot;&gt;&lt;/span&gt;
+&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;&lt;br /&gt;
+var gOverride = {&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;urlBase: 'http://gridder.andreehansson.se/releases/latest/',&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;gColor: '#EEEEEE',&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;gColumns: 12,&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;gOpacity: 0.35,&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;gWidth: 10,&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;pColor: '#C0C0C0',&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;pHeight: 15,&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;pOffset: 0,&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;pOpacity: 0.55,&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;center: true,&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;gEnabled: true,&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;pEnabled: true,&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;setupEnabled: true,&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;fixFlash: true,&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;size: 960&lt;br /&gt;
+};&lt;br /&gt;
+&amp;lt;/script&amp;gt;&lt;br /&gt;
+&lt;span class=&quot;bottom sprite-code-bottom&quot;&gt;&lt;/span&gt;
+&lt;/code&gt;
+
+&lt;!-- IMPLEMENTATION --&gt;
+
+&lt;h2 id=&quot;implementation&quot; class=&quot;sprite-h2&quot;&gt;Implementation&lt;/h2&gt;
+
+&lt;p&gt;When you are heavily developing a site, you probably don't want to activate 960 Gridder by clicking on the bookmarklet every time, in that case, use the code below to automatically enable the grid on your website.&lt;/p&gt;
+
+&lt;code&gt;
+&lt;span class=&quot;top sprite-code-top&quot;&gt;&lt;/span&gt;
+&amp;lt;head&amp;gt;&lt;br /&gt;
+&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;&lt;br /&gt;
+// Insert optional override object before the function&lt;br /&gt;&lt;br /&gt;
+createGridder = function() {&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;document.body.appendChild(&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;document.createElement('script'))&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;.src='http://path-to/960.gridder.js';&lt;br /&gt;
+}&lt;br /&gt;
+&amp;lt;/script&amp;gt;&lt;br /&gt;
+&amp;lt;/head&amp;gt;&lt;br /&gt;
+&amp;lt;body onload=&quot;createGridder()&quot;&amp;gt;&lt;br /&gt;
+&lt;span class=&quot;bottom sprite-code-bottom&quot;&gt;&lt;/span&gt;
+&lt;/code&gt;
+
+&lt;p&gt;A live example of this can be viewed &lt;a title=&quot;Page: Example of implemented 960 Gridder&quot; href=&quot;/implemented&quot;&gt;here&lt;/a&gt;, it is always running the latest version.&lt;/p&gt;
+
+&lt;h2 id=&quot;other-stuff&quot; class=&quot;sprite-h2&quot;&gt;Other Stuff&lt;/h2&gt;
+&lt;p&gt;If you want to see other stuff I have been working on, check out my GitHub, &lt;a href=&quot;http://github.com/peol&quot;&gt;http://github.com/peol&lt;/a&gt; , which includes a jQuery Text Selection special event plugin and a computed style (CSS) plugin.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id=&quot;info&quot; class=&quot;clearfix&quot;&gt;
+
+&lt;!-- AUTHOR --&gt;
+&lt;p&gt;Authored by &lt;a href=&quot;mailto:peolanha_at_gmail&quot;&gt;Andr&Atilde;&copy;e Hansson&lt;/a&gt;, this project is licensed under a MIT License, some rights reserved.&lt;br /&gt;
+Read more at &lt;a href=&quot;http://www.opensource.org/licenses/mit-license.php&quot;&gt;http://www.opensource.org/licenses/mit-license.php&lt;/a&gt;&lt;br /&gt;
+
+&lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+var gaJsHost = ((&quot;https:&quot; == document.location.protocol) ? &quot;https://ssl.&quot; : &quot;http://www.&quot;);
+document.write(unescape(&quot;%3Cscript src='&quot; + gaJsHost + &quot;google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E&quot;));
+try {
+var pageTracker = _gat._getTracker(&quot;UA-7798601-1&quot;);
+pageTracker._trackPageview();
+} catch(err) {}&lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+</code>
+</pre>
+</div>
+
+</div>
+
+</body>
+</html>
