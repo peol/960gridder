@@ -27,7 +27,7 @@ code .top, code .bottom {
 	line-height: 10px;
 	font-size: 0%;
 	position: absolute;
-	background-image: url(/images/sprite.png);
+	background-image: url(../images/sprite.png);
 	top: 0;
 	margin-left: -10px;
 }
@@ -35,7 +35,7 @@ code .top, code .bottom {
 code .bottom {
 	margin-top: -10px;
 	top: 100%;
-	background-image: url(/images/sprite.png);
+	background-image: url(../images/sprite.png);
 }
 
 p {
@@ -63,7 +63,7 @@ h1, h2 {
 	margin-top: 18px;
 	margin-bottom: 18px;
 	padding-left: 25px;
-	background: url(/images/sprite.png);
+	background: url(../images/sprite.png);
 	line-height: 36px;
 	height: 36px;
 }
@@ -92,7 +92,7 @@ img {
 	float: left;
 	border: 0;
 	padding: 1px 0 4px 0;
-	background: url(/images/sprite.png);
+	background: url(../images/sprite.png);
 	background-position: 0 -616px;
 	width: 237px;
 	height: 58px;
@@ -178,7 +178,7 @@ h2 {
 	width: 20px;
 	height: 20px;
 	margin-right: 10px;
-	background: url(/images/sprite.png);
+	background: url(../images/sprite.png);
 	background-position: 0 -150px;
 }
 
