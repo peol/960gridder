@@ -3,7 +3,7 @@
  */
 
 /*!
- * Copyright (c) Andrée Hansson (peolanha AT gmail DOT com)
+ * Copyright (c) Andrï¿½e Hansson (peolanha AT gmail DOT com)
  * MIT License - http://www.opensource.org/licenses/mit-license.php
  * Idea loosely based on JASH, http://billyreisinger.com/jash/
  *
@@ -25,6 +25,8 @@
  *   A-grade browsers (according to browsershots.org)
  * - An option to invert the gutters has been added, set this to 'true' if
  *   you want to use it, OR use the shortcut CTRL+ALT+A
+ * - Position: fixed in the show/hide dialogue
+ * - Pointer-events none for the grid.
  * - Some other minor changes...
  */
 
@@ -138,7 +140,7 @@ function Grid() {
 		 * This is generated when a new version is being released, source can be
 		 * found in the jquery.gridder.src.css file.
 		 */
-		 jQuery('<style type"text/css">#g-setup{position:absolute;top:150px;left:-310px;padding:6px;margin:0;list-style:none;width:320px!important;background-color:#d1cfe6;border:2px solid #a19bd1;z-index:2100;}#g-setup *{background:transparent!important;border:0!important;color:#58517c!important;font-family:Verdana,Geneva,sans-serif!important;font-size:10px!important;font-weight:normal!important;letter-spacing:normal!important;line-height:1!important;list-style-type:none!important;margin:0!important;padding:0!important;text-decoration:none!important;text-indent:0!important;text-transform:none!important;word-spacing:0!important;z-index:2100!important;}#g-setup .head{font-weight:bold!important;text-align:center;border-bottom:1px solid #7cb267!important;}#g-setup ul{width:150px;float:left!important;}#g-setup li{clear:left;padding:5px!important;}* html #g-setup li{clear:none!important;padding:4px!important;}#g-setup span{float:left!important;width:50px;padding:1px 4px 0 0!important;text-align:right!important;line-height:1.5!important;}#g-setup input,#g-setup select{float:left!important;width:70px;border:1px solid #a19bd1!important;background-color:#e7e6ee!important;padding:2px!important;}#g-setup select{width:77px;padding:0!important;}#g-setup-misc{margin-top:5px!important;clear:left;float:none!important;width:300px!important;border-top:1px solid #7cb267!important;}#g-setup-misc span{line-height:1.1!important;width:200px;}#g-setup-misc input{width:15px;padding:0!important;height:15px;}#g-setup-tab{width:26px;overflow:hidden;position:absolute;top:0;left:100%;margin-left:-26px!important;z-index:2100!important;}#g-setup-tab img{left:0;position:relative;}#g-grid{left:0;position:absolute;z-index:500;top:0;}#g-grid .g-vertical,#g-grid .g-horizontal{position:absolute;z-index:1000;}*:first-child+html #g-grid .g-horizontal,*:first-child+html #g-grid .g-vertical{margin-left:-1px;}#g-grid .g-horizontal{min-height:1px;height:1px;font-size:0;line-height:0;}</style>').appendTo('head');
+		 jQuery('<style type"text/css">#g-setup{position:absolute;top:150px;left:-310px;padding:6px;margin:0;list-style:none;width:320px!important;background-color:#d1cfe6;border:2px solid #a19bd1;z-index:2100;}#g-setup *{background:transparent!important;border:0!important;color:#58517c!important;font-family:Verdana,Geneva,sans-serif!important;font-size:10px!important;font-weight:normal!important;letter-spacing:normal!important;line-height:1!important;list-style-type:none!important;margin:0!important;padding:0!important;text-decoration:none!important;text-indent:0!important;text-transform:none!important;word-spacing:0!important;z-index:2100!important;}#g-setup .head{font-weight:bold!important;text-align:center;border-bottom:1px solid #7cb267!important;}#g-setup ul{width:150px;float:left!important;}#g-setup li{clear:left;padding:5px!important;}* html #g-setup li{clear:none!important;padding:4px!important;}#g-setup span{float:left!important;width:50px;padding:1px 4px 0 0!important;text-align:right!important;line-height:1.5!important;}#g-setup input,#g-setup select{float:left!important;width:70px;border:1px solid #a19bd1!important;background-color:#e7e6ee!important;padding:2px!important;}#g-setup select{width:77px;padding:0!important;}#g-setup-misc{margin-top:5px!important;clear:left;float:none!important;width:300px!important;border-top:1px solid #7cb267!important;}#g-setup-misc span{line-height:1.1!important;width:200px;}#g-setup-misc input{width:15px;padding:0!important;height:15px;}#g-setup-tab{width:26px;overflow:hidden;position:absolute;top:0;left:100%;margin-left:-26px!important;z-index:2100!important;}#g-setup-tab img{left:0;position:relative;}#g-grid{left:0;position:absolute;z-index:500;top:0;}#g-grid .g-vertical,#g-grid .g-horizontal{pointer-events:none;position:absolute;z-index:1000;}*:first-child+html #g-grid .g-horizontal,*:first-child+html #g-grid .g-vertical{margin-left:-1px;}#g-grid .g-horizontal{min-height:1px;height:1px;font-size:0;line-height:0;}</style>').appendTo('head');
 		
 		// Get initial document height
 		me.settings.height = jQuery(document).height();
@@ -168,7 +170,7 @@ function Grid() {
 			}
 		
 			// Hook the show/hide text to toggle
-			jQuery('#g-setup').css('top', jQuery(window).scrollTop() + 150);
+			jQuery('#g-setup').css({'position': 'fixed', 'top' : 150px});
 			jQuery('#g-setup-tab a').click(function () {
 				me.toggleSetupWindow();
 			});
@@ -199,10 +201,6 @@ function Grid() {
 				}
 			});
 
-			// FIXME: I wan't to remove this, replace it with position: fixed;
-			jQuery(window).scroll(function () {
-				jQuery('#g-setup').css('top', jQuery().scrollTop() + 150);
-			});
 		}
 		
 		// We're checking if CTRL+ALT and one of toggle keys has been pressed
