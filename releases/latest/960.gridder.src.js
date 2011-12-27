@@ -3,7 +3,7 @@
  */
 
 /*!
- * Copyright (c) Andrée Hansson (peolanha AT gmail DOT com)
+ * Copyright (c) Andrï¿½e Hansson (peolanha AT gmail DOT com)
  * MIT License - http://www.opensource.org/licenses/mit-license.php
  * Idea loosely based on JASH, http://billyreisinger.com/jash/
  *
@@ -25,6 +25,8 @@
  *   A-grade browsers (according to browsershots.org)
  * - An option to invert the gutters has been added, set this to 'true' if
  *   you want to use it, OR use the shortcut CTRL+ALT+A
+ * - Fixed the positioning so that it uses fixed, not scrolling.
+ * - Fixed the grid so that it does not respond to pointer events.
  * - Some other minor changes...
  */
 
@@ -168,7 +170,6 @@ function Grid() {
 			}
 		
 			// Hook the show/hide text to toggle
-			jQuery('#g-setup').css('top', jQuery(window).scrollTop() + 150);
 			jQuery('#g-setup-tab a').click(function () {
 				me.toggleSetupWindow();
 			});
@@ -197,11 +198,6 @@ function Grid() {
 				if (jQuery.inArray(e.which, me.settings.pressedKeys) === -1) {
 					me.settings.pressedKeys.push(e.which);
 				}
-			});
-
-			// FIXME: I wan't to remove this, replace it with position: fixed;
-			jQuery(window).scroll(function () {
-				jQuery('#g-setup').css('top', jQuery().scrollTop() + 150);
 			});
 		}
 		
