@@ -5,7 +5,7 @@
 /* SETUP */
 
 #g-setup {
-	position: absolute;
+	position: fixed;
 	top: 150px;
 	left: -310px;
 	padding: 6px;
@@ -15,6 +15,11 @@
 	background-color: #d1cfe6;
 	border: 2px solid #a19bd1;
 	z-index: 2100;
+	pointer-events: none;
+}
+
+* html #g-setup {
+	position: absolute!important;
 }
 
 #g-setup * {
