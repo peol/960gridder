@@ -3,7 +3,7 @@
  */
 
 /*!
- * Copyright (c) Andrée Hansson (peolanha AT gmail DOT com)
+ * Copyright (c) Andrï¿½e Hansson (peolanha AT gmail DOT com)
  * MIT License - http://www.opensource.org/licenses/mit-license.php
  * Idea loosely based on JASH, http://billyreisinger.com/jash/
  *
@@ -168,7 +168,9 @@ function Grid() {
 			}
 		
 			// Hook the show/hide text to toggle
-			jQuery('#g-setup').css('top', jQuery(window).scrollTop() + 150);
+			if (!jQuery.support.fixedPosition) {
+				jQuery('#g-setup').css('top', jQuery(window).scrollTop() + 150);
+			}
 			jQuery('#g-setup-tab a').click(function () {
 				me.toggleSetupWindow();
 			});
@@ -199,10 +201,12 @@ function Grid() {
 				}
 			});
 
-			// FIXME: I wan't to remove this, replace it with position: fixed;
-			jQuery(window).scroll(function () {
-				jQuery('#g-setup').css('top', jQuery().scrollTop() + 150);
-			});
+			// Falls back to scrolling it manually (for #IE6)[ugh, I know]
+			if(!jQuery.support.fixedPosition) {
+				jQuery(window).scroll(function () {
+					jQuery('#g-setup').css('top', jQuery().scrollTop() + 150);
+				});
+			}
 		}
 		
 		// We're checking if CTRL+ALT and one of toggle keys has been pressed
